@@ -80,6 +80,7 @@
 //扫描到设备会进入方法
 -(void)centralManager:(CBCentralManager *)central didDiscoverPeripheral:(CBPeripheral *)peripheral advertisementData:(NSDictionary *)advertisementData RSSI:(NSNumber *)RSSI{
     
+    NSLog(@"%@",peripheral.name);
     NSString *str = [NSString stringWithFormat:@"扫描到设备:%@",peripheral.name];
     if (self.delegate) {
         [self.delegate bluetoothValueDidExchange:BTValueDiscoverDevice withMessage:str];
